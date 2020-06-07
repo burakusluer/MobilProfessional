@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_marvel"
+    app:startDestination="@id/fragmentFeed">
+
+    <fragment
+        android:id="@+id/fragmentFeed"
+        android:name="com.burakusluer.kotlinmarvel.view.fragments.FragmentFeed"
+        android:label="FragmentFeed" >
+        <action
+            android:id="@+id/action_fragmentFeed_to_fragmentHero"
+            app:destination="@id/fragmentHero" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHero"
+        android:name="com.burakusluer.kotlinmarvel.view.fragments.FragmentHero"
+        android:label="fragment_hero"
+        tools:layout="@layout/fragment_hero" >
+        <action
+            android:id="@+id/action_fragmentHero_to_fragmentFeed"
+            app:destination="@id/fragmentFeed" />
+        <argument
+            android:name="uuid"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
